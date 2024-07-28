@@ -10,11 +10,11 @@ import pandas as pd
 
 
 # Paths to images
-content_image_path = 'final_project_images/content_images/miley_cyrus.jpg'
-style_image_path = 'final_project_images/style_images/cathedral.png'
-generated_images_folder = 'final_project\image_gens\miley_cyrus_arch\Cathedral_1'  # Folder containing generated images
+content_image_path = 'final_project_images/content_images/cityscape.png'
+style_image_path = 'final_project_images/style_images/zaha-texture.png'
+generated_images_folder = 'image_gens/cityscape_arch/zaha_4'  # Folder containing generated images
 
-save_data_name = 'base_miley_cathedral_similarity_scores.csv'
+save_data_name = 'city_zaha_similarity_scores_4.csv'
 
 step_size = 100
 
@@ -104,8 +104,9 @@ ax2.set_ylim(0, 1)
 
 fig.tight_layout()  # To ensure the labels do not overlap
 plt.title('Cosine Similarity of Generated Images Over Training Steps')
+full_path = os.path.join('final_similarity_scores_HP/', save_data_name + '.png')
+plt.savefig(full_path)
 plt.show()
-
 
 # Create a DataFrame to store the results
 results_df = pd.DataFrame({
@@ -115,4 +116,4 @@ results_df = pd.DataFrame({
 })
 
 # Save the DataFrame to a CSV file
-results_df.to_csv('final_project_similarity_scores/' + save_data_name, index=False)
+results_df.to_csv('final_similarity_scores_HP/' + save_data_name, index=False)
