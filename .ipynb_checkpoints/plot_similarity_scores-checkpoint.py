@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.lines as mlines
 
 # Directory containing the CSV files
-csv_directory = 'final_project_similarity_scores'  # Replace with the actual path
+csv_directory = 'final_similarity_scores_HP/high-level-3'  # Replace with the actual path
 
 # List to store the DataFrame for each CSV file
 dataframes = []
