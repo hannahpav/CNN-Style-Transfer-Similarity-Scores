@@ -11,10 +11,10 @@ import pandas as pd
 
 # Paths to images
 content_image_path = 'final_project_images/content_images/miley_cyrus.png'
-style_image_path = 'final_project_images/style_images/zaha-texture.png'
-generated_images_folder = 'image_gens/miley_cyrus_arch/zaha_4'  # Folder containing generated images
+style_image_path = 'final_project_images/style_images/cathedral.png'
+generated_images_folder = 'image_gens/miley_cyrus_arch/cathedral_3'  # Folder containing generated images
 
-save_data_name = 'miley_zaha_similarity_scores_4.csv'
+save_data_name = 'miley_cathedral_similarity_scores_3.csv'
 
 step_size = 100
 

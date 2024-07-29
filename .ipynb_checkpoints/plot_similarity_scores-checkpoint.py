@@ -43,14 +43,15 @@ for (filename, group) in combined_df.groupby('File'):
     style_image = group['Style Image'].iloc[0]
     color = color_map[content_image]
     line_style = line_style_map[style_image]
-    plt.plot(group['Step'], group['Style/Content Ratio'], label=filename, color=color, linestyle=line_style)
+    plt.plot(group['Step'], group['Style/Content Ratio'], label=filename, color=color, linestyle=line_style, linewidth=3)
 
 # Add a horizontal line at 1
-plt.axhline(y=1, color='grey', linestyle='--', linewidth=1, label='Ratio = 1')
+plt.axhline(y=1, color='grey', linestyle='--', linewidth=2, label='Ratio = 1')
 
-plt.xlabel('Steps')
-plt.ylabel('Style/Content Ratio')
-plt.title('Style/Content Ratio Over Training Steps')
+# Set font sizes for labels and title
+plt.xlabel('Steps', fontsize=16)  # Adjust font size here
+plt.ylabel('Style/Content Ratio', fontsize=16)  # Adjust font size here
+plt.title('Style/Content Ratio Over Training Steps', fontsize=18)  # Adjust font size here
 
 # Create custom legend
 handles = []
@@ -58,9 +59,26 @@ for content_image in combined_df['Content Image'].unique():
     handles.append(mlines.Line2D([], [], color=color_map[content_image], label=content_image))
 for style_image in combined_df['Style Image'].unique():
     handles.append(mlines.Line2D([], [], color='black', linestyle=line_style_map[style_image], label=style_image))
-handles.append(mlines.Line2D([], [], color='grey', linestyle='--', linewidth=1, label='Ratio = 1'))
-plt.legend(handles=handles)
+handles.append(mlines.Line2D([], [], color='grey', linestyle='--', linewidth=2, label='Ratio = 1'))  # Adjust linewidth here
+plt.legend(handles=handles, fontsize=16)  # Adjust font size here
 
 plt.tight_layout()
-plt.savefig(csv_directory + '/similarity_plot.png')
+plt.savefig(os.path.join(csv_directory, 'similarity_plot.png'))
 plt.show()
+
+# plt.xlabel('Steps')
+# plt.ylabel('Style/Content Ratio')
+# plt.title('Style/Content Ratio Over Training Steps')
+
+# # Create custom legend
+# handles = []
+# for content_image in combined_df['Content Image'].unique():
+#     handles.append(mlines.Line2D([], [], color=color_map[content_image], label=content_image))
+# for style_image in combined_df['Style Image'].unique():
+#     handles.append(mlines.Line2D([], [], color='black', linestyle=line_style_map[style_image], label=style_image))
+# handles.append(mlines.Line2D([], [], color='grey', linestyle='--', linewidth=1, label='Ratio = 1'))
+# plt.legend(handles=handles)
+
+# plt.tight_layout()
+# plt.savefig(csv_directory + '/similarity_plot.png')
+# plt.show()
