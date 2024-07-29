@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib.lines as mlines
 
 # Directory containing the CSV files
-csv_directory = 'final_similarity_scores_HP/high-level-3'  # Replace with the actual path
+csv_directory = 'final_similarity_scores_HP/mid-level-1'  # Replace with the actual path
 
 # List to store the DataFrame for each CSV file
 dataframes = []
@@ -62,4 +62,5 @@ handles.append(mlines.Line2D([], [], color='grey', linestyle='--', linewidth=1, 
 plt.legend(handles=handles)
 
 plt.tight_layout()
+plt.savefig(csv_directory + '/similarity_plot.png')
 plt.show()
