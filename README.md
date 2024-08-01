@@ -2,7 +2,7 @@
 Hannah Pavlovich and Richard Lepkowicz
 
 [The final report for this project can be accessed here
-]([url](https://github.com/hannahpav/CNN-Style-Transfer-Similarity-Scores/blob/main/Final-Paper-CNN-Style-Transfer.pdf))
+][https://github.com/hannahpav/CNN-Style-Transfer-Similarity-Scores/blob/main/Final-Paper-CNN-Style-Transfer.pdf]
 
 ## Abstract
 This study investigates the effectiveness of neural style transfer techniques, focusing on enhancing the preservation of artistic styles and content, particularly in architectural images. We begin by replicating Gatys et al.'s method using the VGG-19 model and then explore various extensions to improve style transfer from architectural styles to cityscapes and portraits. Our modifications include testing alternative loss functions—such as perceptual, total variation, and Wasserstein losses—to capture nuanced differences in style and content preservation. We also adjust CNN layer selections to assess how varying levels of feature abstraction affect transfer results to evaluate their impact on image quality.
